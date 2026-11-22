@@ -1,7 +1,7 @@
-# Garment Employees Productivity Classification — ML Assignment 2
+﻿# Garment Employees Productivity Classification â€” ML Assignment 2
 
-**Student Name:** Viswanadha Tarun  
-**Program:** M.Tech (AIML / DSE) — Work Integrated Learning Programmes (WILP), BITS Pilani  
+**Student Name:** Viswanadha Nikhil  
+**Program:** M.Tech (AIML / DSE) â€” Work Integrated Learning Programmes (WILP), BITS Pilani  
 **GitHub Repository:** [https://github.com/nikhil2004-vis/ml-assignment-2](https://github.com/nikhil2004-vis/ml-assignment-2)
 
 ---
@@ -24,7 +24,7 @@ This project formulates a **binary classification pipeline** to predict whether 
   * **Input Features:** 15 features after extracting `month` and `day_of_month` from `date` and dropping the raw continuous `actual_productivity` column used to derive the target
   * **Train / Test Split:** 80:20 stratified split (`957` training instances, `240` test instances saved in `test_data.csv`) using `random_state=42`
 * **Feature Breakdown:**
-  * **Categorical Features (4):** `quarter` (Quarter1–Quarter5), `department` (`sweing`, `finishing` after whitespace normalization), `day` (day of the week), `team` (team identifier 1–12).
+  * **Categorical Features (4):** `quarter` (Quarter1â€“Quarter5), `department` (`sweing`, `finishing` after whitespace normalization), `day` (day of the week), `team` (team identifier 1â€“12).
   * **Numerical Features (11):** `targeted_productivity`, `smv` (Standard Minute Value), `wip` (Work in Progress), `over_time` (in minutes), `incentive`, `idle_time`, `idle_men`, `no_of_style_change`, `no_of_workers`, `month`, `day_of_month`.
 * **Missing Values Handling:**
   * `wip` (Work in Progress) contained **506 missing values** (~42.3% of records, occurring primarily in finishing lines where unfinished items are not logged separately).
@@ -40,21 +40,21 @@ This project formulates a **binary classification pipeline** to predict whether 
 
 ### Repository Layout
     ml-assignment-2/
-    ├── requirements.txt
-    ├── README.md
-    ├── test_data.csv
-    └── model/
-        ├── preprocess.py
-        ├── train_evaluate.py
-        ├── evaluation_results.csv
-        ├── metrics_comparison.png
-        ├── roc_curves.png
-        └── saved_models/
-            ├── logistic_regression.pkl
-            ├── decision_tree.pkl
-            ├── knn.pkl
-            ├── naive_bayes.pkl
-            └── random_forest_ensemble.pkl
+    â”œâ”€â”€ requirements.txt
+    â”œâ”€â”€ README.md
+    â”œâ”€â”€ test_data.csv
+    â””â”€â”€ model/
+        â”œâ”€â”€ preprocess.py
+        â”œâ”€â”€ train_evaluate.py
+        â”œâ”€â”€ evaluation_results.csv
+        â”œâ”€â”€ metrics_comparison.png
+        â”œâ”€â”€ roc_curves.png
+        â””â”€â”€ saved_models/
+            â”œâ”€â”€ logistic_regression.pkl
+            â”œâ”€â”€ decision_tree.pkl
+            â”œâ”€â”€ knn.pkl
+            â”œâ”€â”€ naive_bayes.pkl
+            â””â”€â”€ random_forest_ensemble.pkl
 
 ### Execution Instructions
     # 1. Clone the repository
@@ -105,4 +105,4 @@ All five classification models were trained using identical leakage-free preproc
 | **kNN** | Ranked second overall (`Accuracy = 0.7625`, `AUC = 0.7711`, `F1 = 0.8464`, `MCC = 0.3413`) and tied for the highest Recall (`0.8971`). Distance-weighted voting (`n_neighbors=7`) on standardized features effectively grouped similar team/SMV/overtime operating profiles, though high dimensionality from one-hot encoded teams slightly tempered its precision (`0.8010`). |
 | **Naive Bayes** | Recorded the lowest Accuracy (`0.6875`), AUC (`0.6640`), and Recall (`0.7657`), though its Precision (`0.7976`) and MCC (`0.2353`) outperformed Logistic Regression. Gaussian Naive Bayes assumes conditional feature independence and normality, which is violated by correlated manufacturing variables (`smv`, `no_of_workers`, `over_time`) and binary one-hot indicators. |
 | **Random Forest (Ensemble)** | Delivered the strongest performance across every single metric (`Accuracy = 0.7875`, `AUC = 0.8221`, `Precision = 0.8263`, `Recall = 0.8971`, `F1 = 0.8603`, `MCC = 0.4262`). Bagging 200 depth-regularized trees reduced single-tree variance and captured complex feature interactions without overfitting, achieving the best balance between majority and minority class predictions. |
-| **Overall Winner for your dataset?** | **Random Forest (Ensemble)** is the clear overall winner, ranking #1 across all six evaluation metrics—most notably achieving an **AUC of 0.8221** and an **MCC of 0.4262** (more than 2.7x higher than Logistic Regression), demonstrating superior predictive power on imbalanced operational data. |
+| **Overall Winner for your dataset?** | **Random Forest (Ensemble)** is the clear overall winner, ranking #1 across all six evaluation metricsâ€”most notably achieving an **AUC of 0.8221** and an **MCC of 0.4262** (more than 2.7x higher than Logistic Regression), demonstrating superior predictive power on imbalanced operational data. |
