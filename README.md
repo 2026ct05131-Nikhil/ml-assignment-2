@@ -2,7 +2,7 @@
 
 **Student Name:** Viswanadha Nikhil  
 **Program:** M.Tech (AIML / DSE) â€” Work Integrated Learning Programmes (WILP), BITS Pilani  
-**GitHub Repository:** [https://github.com/nikhil2004-vis/ml-assignment-2](https://github.com/nikhil2004-vis/ml-assignment-2)
+**GitHub Repository:** [https://github.com/2026ct05131-Nikhil/ml-assignment-2](https://github.com/2026ct05131-Nikhil/ml-assignment-2)
 
 ---
 
@@ -58,7 +58,7 @@ This project formulates a **binary classification pipeline** to predict whether 
 
 ### Execution Instructions
     # 1. Clone the repository
-    git clone https://github.com/nikhil2004-vis/ml-assignment-2.git
+    git clone https://github.com/2026ct05131-Nikhil/ml-assignment-2.git
     cd ml-assignment-2
 
     # 2. Install required dependencies
